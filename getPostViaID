@@ -1,0 +1,10 @@
+// Setting the Post ID in a variable for which the content is required
+$the_postid = 20; 
+
+$the_post_content = get_post($the_postid);
+$content = $the_post_content->post_content;
+$content = apply_filters('the_content', $content);
+$content = str_replace(']]>', ']]&gt;', $content);
+
+// Print Content data
+echo $content;
